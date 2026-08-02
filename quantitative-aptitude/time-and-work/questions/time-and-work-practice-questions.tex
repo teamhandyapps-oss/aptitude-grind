@@ -1,0 +1,265 @@
+\documentclass[11pt]{article}
+\input{../preamble.tex}
+
+\title{\color{primary}\textbf{Time \& Work --- Practice Questions}\\[4pt]\large Medium to Difficult, With Full Solutions}
+\author{Aptitude Grind}
+\date{}
+
+\lhead{\small Time \& Work --- Practice Questions}
+\rhead{\small Aptitude Grind}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\noindent\textit{Difficulty is marked as \textbf{[M]} Medium or \textbf{[H]} Hard. Solve on your own
+first, then check the solution. Solutions use the methods from \texttt{01-fundamentals.tex},
+\texttt{02-fast-tricks-and-shortcuts.tex}, and \texttt{03-question-pattern-catalog.tex}. Every
+numeric answer below was cross-checked independently using exact fraction arithmetic (Python's
+\texttt{fractions.Fraction}) before being finalized.}
+
+\bigskip
+\hrule
+\bigskip
+
+\subsection*{Q1 [M] --- Two People Working Together (Pattern A1)}
+A can complete a job alone in 12 days, B alone in 24 days. In how many days can they finish it
+working together?
+
+\begin{tipbox}[Solution]
+\[
+\text{Together} = \frac{12 \times 24}{12+24} = \frac{288}{36} = 8
+\]
+\textbf{Answer: 8 days}
+\end{tipbox}
+
+\subsection*{Q2 [M] --- Efficiency Ratio (Pattern B1)}
+The efficiency ratio of A to B is 3:5. A alone takes 20 days to complete a job. Find the number of
+days B alone would take, and the number of days they would take working together.
+
+\begin{tipbox}[Solution]
+Efficiency ratio 3:5 means A is the \emph{less} efficient one, so A (efficiency 3) takes more time
+than B (efficiency 5). Since time is inversely proportional to efficiency:
+\begin{align*}
+\text{Time ratio } A:B &= 5:3 \quad \text{(reverse of efficiency ratio)} \\
+A = 20 \text{ days} \;\Rightarrow\; B &= 20 \times 3/5 = 12 \text{ days} \\
+\text{Together} &= \frac{20 \times 12}{20+12} = \frac{240}{32} = 7.5 \text{ days}
+\end{align*}
+\textbf{Answer: B alone = 12 days; together = 7.5 days}
+\end{tipbox}
+
+\subsection*{Q3 [M] --- The Difference Formula (Pattern \S5 of \texttt{01-fundamentals.tex})}
+A alone can complete a job in 30 days. A and B together can complete it in 12 days. In how many days
+can B alone complete the job?
+
+\begin{tipbox}[Solution]
+\[
+\frac{1}{B} = \frac{1}{12} - \frac{1}{30} = \frac{5}{60} - \frac{2}{60} = \frac{3}{60} = \frac{1}{20}
+\]
+\textbf{Answer: B alone = 20 days}
+\end{tipbox}
+
+\subsection*{Q4 [M] --- LCM Method, Three Workers (Pattern A2)}
+A, B, and C can individually complete a job in 12, 15, and 20 days respectively. In how many days
+will they finish it working together?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{LCM}(12,15,20) &= 60 \text{ units of total work} \\
+A\text{'s rate} = 60/12 = 5,\quad B\text{'s rate} &= 60/15 = 4,\quad C\text{'s rate} = 60/20 = 3
+\text{ (units/day)} \\
+\text{Combined rate} &= 5+4+3 = 12 \text{ units/day} \\
+\text{Time} &= 60/12 = 5 \text{ days}
+\end{align*}
+\textbf{Answer: 5 days}
+\end{tipbox}
+
+\subsection*{Q5 [M] --- Pipes Filling and Emptying Together (Pattern E1)}
+A pipe can fill a tank in 6 hours; another pipe can empty the full tank in 9 hours. If both pipes are
+opened together, in how much time will the tank be filled?
+
+\begin{tipbox}[Solution]
+\[
+\text{Net rate} = \frac{1}{6} - \frac{1}{9} = \frac{3}{18} - \frac{2}{18} = \frac{1}{18}
+\Rightarrow \text{Time} = 18 \text{ hours}
+\]
+\textbf{Answer: 18 hours}
+\end{tipbox}
+
+\subsection*{Q6 [H] --- Pipe Closed Partway Through (Pattern E2)}
+Fill pipe A can fill a tank in 10 hours; outlet pipe B can empty it in 15 hours. Both are opened
+together, but B is closed after 3 hours. Find the total time to fill the tank.
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{Net rate (both open)} &= 1/10 - 1/15 = 1/30 \\
+\text{Work done in first 3 hours} &= 3 \times 1/30 = 1/10 \\
+\text{Remaining work} &= 1 - 1/10 = 9/10 \\
+\text{A alone (rate } 1/10\text{/hr) needs:} & (9/10) \div (1/10) = 9 \text{ more hours} \\
+\text{Total time} &= 3 + 9 = 12 \text{ hours}
+\end{align*}
+\textbf{Answer: 12 hours}
+\end{tipbox}
+
+\begin{warnbox}[Why This Is a Common Trap]
+People sometimes keep using the \emph{net} rate for the whole problem, forgetting that once the
+outlet closes, only the inlet's rate applies for the rest of the time. Always split into phases the
+moment any pipe's status changes.
+\end{warnbox}
+
+\subsection*{Q7 [H] --- Worker Joining Midway (Pattern C1)}
+A can complete a job alone in 20 days. A works alone for 5 days, then B (who alone would take 30
+days) joins. How many total days does the job take to finish?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{Work done by A in 5 days} &= 5/20 = 1/4 \\
+\text{Remaining work} &= 3/4 \\
+\text{Combined rate (A + B)} &= 1/20 + 1/30 = 3/60 + 2/60 = 1/12 \\
+\text{Extra days needed} &= (3/4) \div (1/12) = 9 \\
+\text{Total days} &= 5 + 9 = 14
+\end{align*}
+\textbf{Answer: 14 days}
+\end{tipbox}
+
+\subsection*{Q8 [H] --- Workers Leaving Midway (Pattern C2)}
+36 workers can complete a job in 20 days. After 5 days, 6 workers leave the job. In how many more
+days will the remaining workers finish it?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{Total work} &= 36 \times 20 = 720 \text{ worker-days} \\
+\text{Work done in 5 days} &= 36 \times 5 = 180 \text{ worker-days} \\
+\text{Remaining work} &= 720 - 180 = 540 \text{ worker-days} \\
+\text{Workers remaining} &= 36 - 6 = 30 \\
+\text{Days needed} &= 540/30 = 18
+\end{align*}
+\textbf{Answer: 18 more days}
+\end{tipbox}
+
+\subsection*{Q9 [M] --- Alternate-Day Working (Pattern F1)}
+A can complete a job alone in 6 days, B alone in 9 days. Working on alternate days, starting with A,
+in how many days will the job be finished?
+
+\begin{tipbox}[Solution]
+\[
+\text{2-day cycle work} = \frac{1}{6} + \frac{1}{9} = \frac{3}{18} + \frac{2}{18} = \frac{5}{18}
+\]
+Three full cycles (6 days) complete $3 \times 5/18 = 15/18 = 5/6$ of the work. Remaining work $=1/6$.
+Day 7 is A's turn again: A's rate is $1/6$, so A finishes exactly the remaining $1/6$ in \textbf{one
+more full day}.
+\[
+\text{Total} = 6 \text{ (three full cycles)} + 1 \text{ (A's final day)} = 7 \text{ days}
+\]
+\textbf{Answer: 7 days}
+\end{tipbox}
+
+\subsection*{Q10 [H] --- Men/Women Equivalence (Pattern D1)}
+3 men do the same amount of work as 5 women (equal efficiency comparison). 3 men alone can complete a
+job in 20 days. In how many days can 6 men and 10 women together complete the same job?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{3 men alone: 20 days} &\Rightarrow 1 \text{ man's rate} = 1/(3\times20) = 1/60 \\
+3 \text{ men} = 5 \text{ women (equal output)} &\Rightarrow 1 \text{ woman's rate} =
+(3\times1/60)/5 = 1/100 \\
+6 \text{ men} + 10 \text{ women rate} &= 6\times(1/60) + 10\times(1/100) = 1/10 + 1/10 = 1/5 \\
+\text{Time} &= 5 \text{ days}
+\end{align*}
+\textbf{Answer: 5 days}
+\end{tipbox}
+
+\begin{tipbox}[Note]
+6 men and 10 women is exactly \emph{double} the ``3 men = 5 women'' equivalence group, so it makes
+sense the answer is a clean number --- doubling the workforce on a fixed job always halves the time,
+and here the group ratio was scaled up perfectly.
+\end{tipbox}
+
+\subsection*{Q11 [M] --- Wages Based on Work (Pattern G1)}
+A can complete a job alone in 8 days, B alone in 12 days. They work together and are jointly paid
+Rs.~2500. Find each person's share.
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{Rate ratio } A:B &= 1/8 : 1/12 = 3:2 \quad \text{(multiply both by 24)} \\
+A\text{'s share} &= 2500 \times 3/5 = Rs.~1500 \\
+B\text{'s share} &= 2500 \times 2/5 = Rs.~1000
+\end{align*}
+\textbf{Answer: A = Rs.~1500, B = Rs.~1000}
+\end{tipbox}
+
+\subsection*{Q12 [M] --- Efficiency Decrease $\to$ Time Change (Pattern J2)}
+A's efficiency decreases by 25\%. If A originally took 18 days to complete a job at full efficiency,
+how many days will A now take?
+
+\begin{tipbox}[Solution]
+\[
+\text{New Time} = \text{Old Time} \times \frac{100}{100-25} = 18 \times \frac{100}{75} = 24
+\]
+\textbf{Answer: 24 days}
+\end{tipbox}
+
+\subsection*{Q13 [H] --- Variable Efficiency Mid-Job (Pattern J1)}
+Working at a constant rate, A can finish a job in 12 days. A works at the normal rate for the first 3
+days, then works at \textbf{triple} efficiency for the rest of the job. How many total days does the
+job take?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+\text{Normal rate} &= 1/12 \\
+\text{Work done in first 3 days} &= 3 \times 1/12 = 1/4 \\
+\text{Remaining work} &= 3/4 \\
+\text{Tripled rate} &= 3 \times 1/12 = 1/4 \\
+\text{Extra days needed} &= (3/4) \div (1/4) = 3 \\
+\text{Total days} &= 3 + 3 = 6
+\end{align*}
+\textbf{Answer: 6 days}
+\end{tipbox}
+
+\subsection*{Q14 [H] --- Percentage of Work Completed (Pattern I1)}
+A can complete 90\% of a job in 18 days. In how many days can A alone complete the entire job? B then
+finishes the remaining 10\% of the job in 3 days --- in how many days could B alone complete the
+entire job?
+
+\begin{tipbox}[Solution]
+\begin{align*}
+A: 90\% \text{ in 18 days} &\Rightarrow 100\% \text{ in } 18/0.9 = 20 \text{ days} \\
+B: 10\% \text{ in 3 days} &\Rightarrow 100\% \text{ in } 3/0.1 = 30 \text{ days}
+\end{align*}
+\textbf{Answer: A alone = 20 days; B alone = 30 days}
+\end{tipbox}
+
+\begin{warnbox}[Why This Is a Common Trap]
+People sometimes try to combine A and B's \emph{individual} full-job times directly (e.g., averaging
+20 and 30) to answer a different question about their combined time. Here the question only asks for
+each person's \textbf{individual} full-job time --- scale each person's given fraction
+independently; don't mix the two workers' numbers together unless the question specifically asks for
+a combined rate.
+\end{warnbox}
+
+\section*{Answer Key Summary}
+\begin{formulabox}[Answers]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Question} & \textbf{Answer} \\
+\midrule
+Q1 & 8 days \\
+Q2 & B = 12 days; together = 7.5 days \\
+Q3 & 20 days \\
+Q4 & 5 days \\
+Q5 & 18 hours \\
+Q6 & 12 hours \\
+Q7 & 14 days \\
+Q8 & 18 more days \\
+Q9 & 7 days \\
+Q10 & 5 days \\
+Q11 & A = Rs.~1500, B = Rs.~1000 \\
+Q12 & 24 days \\
+Q13 & 6 days \\
+Q14 & A = 20 days, B = 30 days \\
+\bottomrule
+\end{tabular}
+\end{formulabox}
+
+\end{document}

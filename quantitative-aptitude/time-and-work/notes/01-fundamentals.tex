@@ -1,0 +1,235 @@
+\documentclass[11pt]{article}
+\input{../preamble.tex}
+
+\title{\color{primary}\textbf{Time \& Work --- Fundamentals}\\[4pt]\large Work, Rate, Efficiency \& the Core Formulas}
+\author{Aptitude Grind}
+\date{}
+
+\lhead{\small Time \& Work --- Fundamentals}
+\rhead{\small Aptitude Grind}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Why Time \& Work Matters for TCS NQT}
+Time \& Work is one of the highest-frequency topics in TCS NQT (Ninja + Digital) Numerical Ability,
+alongside Percentages and Ratios. Unlike SSC CGL or CAT, TCS rarely asks difficult algebraic
+work-time puzzles --- it sticks to \textbf{direct formula-based questions with at most 1--2 twists}:
+ratio based worker efficiency, pipes \& cisterns, alternate working/resting, men-women-children
+efficiency, and machine problems. The entire topic rests on one idea: \emph{work, rate, and time are
+locked together by a single equation, and almost every question is just that equation applied from a
+different angle.}
+
+\section{The Golden Rule}
+\begin{formulabox}[Core Identity]
+\[
+\textbf{Work} = \textbf{Rate} \times \textbf{Time}, \quad \text{i.e. } W = R \times T
+\]
+\begin{itemize}[leftmargin=1.4em]
+  \item \textbf{Work} --- the total task, conventionally treated as \textbf{1 unit} (a whole job)
+    unless stated otherwise.
+  \item \textbf{Rate} --- work done per unit time (also called \emph{efficiency} or \emph{one
+    day's/hour's work}).
+  \item \textbf{Time} --- days/hours taken.
+\end{itemize}
+If total work $= 1$, then $\text{Rate} = 1/\text{Time}$.
+\end{formulabox}
+
+This single idea solves almost every question in this topic --- everything below is a variation of
+it.
+
+\section{One Day's Work}
+If \textbf{A} finishes a work in $N$ days, A's one day's work is $1/N$.
+
+\begin{examplebox}[Example]
+A completes a work in 8 days $\Rightarrow$ one day's work $= 1/8$.
+\end{examplebox}
+
+The relationship also runs backward: if A's one day's work is $1/15$, then A alone takes
+\textbf{15 days} to finish the whole job. Time and one-day's-work are reciprocals of each other.
+
+\section{Combined Work --- Two Workers}
+If A finishes a job alone in $x$ days and B finishes it alone in $y$ days, their combined one-day's
+work is $1/x + 1/y$, so together they take:
+\begin{formulabox}[Combined Work Formula]
+\[
+\text{Time (A + B)} = \frac{xy}{x+y}
+\]
+\end{formulabox}
+This formula is extremely common and worth memorizing outright.
+
+\begin{examplebox}[Worked Example]
+A = 10 days, B = 15 days.
+\[
+\text{Together} = \frac{10 \times 15}{10 + 15} = \frac{150}{25} = 6 \text{ days}
+\]
+\end{examplebox}
+
+\section{Combined Work --- Three or More Workers}
+For three workers:
+\[
+\text{Combined one-day's work} = \frac{1}{x} + \frac{1}{y} + \frac{1}{z}
+\]
+Take the LCM of $x$, $y$, $z$ to add these cleanly (see \texttt{02-fast-tricks-and-shortcuts.tex} for
+the LCM shortcut). For $n$ workers, the pattern generalizes --- just sum every individual rate.
+
+\section{The Difference Formula (Finding One Worker From a Pair)}
+If A alone takes $x$ days, and A + B together take $y$ days, B's one-day's work is:
+\begin{formulabox}[Difference Formula]
+\[
+\frac{1}{B} = \frac{1}{y} - \frac{1}{x}
+\]
+\end{formulabox}
+then invert to get B's number of days.
+
+\begin{examplebox}[Worked Example]
+A = 30 days, A + B = 12 days.
+\[
+\frac{1}{B} = \frac{1}{12} - \frac{1}{30} = \frac{5}{60} - \frac{2}{60} = \frac{3}{60} = \frac{1}{20}
+\Rightarrow B = 20 \text{ days}
+\]
+\end{examplebox}
+
+This ``given one worker + the pair, find the other worker'' pattern is one of the most frequently
+tested variants of Time \& Work.
+
+\section{Efficiency Concept (Very Important)}
+\begin{formulabox}[Inverse Proportionality]
+\[
+\text{Efficiency} \propto \frac{1}{\text{Time}}
+\]
+Higher efficiency means less time, and the two are always \textbf{inversely proportional}.
+\end{formulabox}
+
+If efficiency ratio $A:B = 2:3$, then time ratio $A:B = 3:2$ --- always the reverse of the efficiency
+ratio.
+
+\begin{examplebox}[Example]
+Time ratio $2:5$ $\Rightarrow$ efficiency ratio $5:2$.
+\end{examplebox}
+
+\subsection{Worker-Ratio Questions --- Think in Rates, Not Days}
+\textbf{Example:} ``A is twice as efficient as B.''
+
+\begin{tipbox}[Right Approach]
+Assume work \emph{rates} directly. Let B's rate $= 1$ unit/day, then A's rate $= 2$ units/day. Never
+assume days first --- assume the rate ratio, since that's what the problem is actually telling you.
+\end{tipbox}
+
+This single habit --- assigning rates instead of days whenever a ratio is given --- is the fastest
+problem-solving upgrade in this entire topic.
+
+\section{Men, Women, and Children Equivalence}
+Frequently, a question gives an equivalence like ``2 Men = 3 Women'' and expects you to convert
+everyone into one common unit before adding rates.
+
+\begin{examplebox}[Worked Example]
+$2M = 3W$ (i.e. equal work done in equal time)
+\[
+2M = 3W \;\Rightarrow\; M:W = 3:2 \;\Rightarrow\; 1 \text{ man} = \tfrac{3}{2} \text{ women (in work
+output)}
+\]
+\end{examplebox}
+
+Always convert every category (men, women, children) into a single common unit of efficiency before
+combining rates --- treat this exactly like the ratio-to-rate trick above.
+
+\section{Machine / Printer / Robot / Server Problems}
+Conceptually \textbf{identical} to worker problems --- a machine, printer, robot, or server is just
+another ``worker'' with its own rate. No new formula is needed; apply everything above directly.
+
+\section{Pipes and Cisterns}
+Same core concept, with a sign convention:
+\begin{formulabox}[Pipe Sign Convention]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Pipe type} & \textbf{Effect} & \textbf{Rate} \\
+\midrule
+Filling (inlet) & Positive work & $+1/x$ (fills in $x$ hours) \\
+Emptying (outlet) & Negative work & $-1/y$ (empties in $y$ hours) \\
+\bottomrule
+\end{tabular}
+\end{formulabox}
+
+\textbf{Both pipes open together:}
+\[
+\text{Net rate} = \frac{1}{x} - \frac{1}{y}, \qquad \text{Time} = \frac{1}{\text{Net Rate}}
+\]
+
+\begin{examplebox}[Worked Example]
+Fill pipe = 8 hr, Empty pipe = 12 hr.
+\[
+\text{Net rate} = \frac{1}{8} - \frac{1}{12} = \frac{3}{24} - \frac{2}{24} = \frac{1}{24}
+\Rightarrow \text{Time} = 24 \text{ hours}
+\]
+\end{examplebox}
+
+\begin{warnbox}[Common Mistake]
+Adding the empty-pipe rate instead of subtracting it. Always treat outlet pipes as \textbf{negative}
+contributions to the net rate.
+\end{warnbox}
+
+\section{Worker-Day Concept}
+Another foundational identity, used constantly for workers joining/leaving problems:
+\begin{formulabox}[Worker-Day Identity]
+\[
+\text{Total Work} = \text{Workers} \times \text{Days}
+\]
+(only valid when every worker has equal, constant efficiency)
+\end{formulabox}
+
+\begin{examplebox}[Worked Example]
+20 workers finish a job in 15 days $\Rightarrow$ Total work $= 20 \times 15 = 300$ worker-days.
+\end{examplebox}
+
+This ``worker-days'' total is treated as a fixed, conserved quantity --- exactly like total work $=
+1$ in the fractional approach, just scaled up to avoid fractions. See
+\texttt{02-fast-tricks-and-shortcuts.tex} \S3 for how this is applied to workers-leaving and
+workers-joining problems.
+
+\section{Wages Are Proportional to Work --- Not Time}
+\begin{warnbox}[Very Common Trap]
+\textbf{Money} $\propto$ \textbf{Work Done}, never time spent. If efficiency ratio is $3:5$, wages
+split in the ratio $3:5$ --- \textbf{regardless of how many days each person actually worked}, as
+long as they worked together on the same job. This trips people up constantly because it feels like
+it should depend on time, but wages track \emph{output}, not \emph{hours logged}.
+\end{warnbox}
+
+\section{Formula Sheet --- Quick Reference}
+\begin{formulabox}[Master Table]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Situation} & \textbf{Formula} \\
+\midrule
+Work & Rate $\times$ Time \\
+Rate (one day's/hour's work) & Work / Time $= 1/\text{Time}$ \\
+Time & $1/\text{Rate}$ \\
+Combined work (A + B) & $xy/(x+y)$ \\
+Combined work ($n$ workers) & Sum of all individual rates, then invert \\
+Difference formula & $1/B = 1/(A{+}B \text{ time}) - 1/(A \text{ time})$ \\
+Pipe filling & $+1/x$ \\
+Pipe emptying & $-1/y$ \\
+Efficiency & $1/\text{Time}$ (inversely proportional to time) \\
+Wages & $\propto$ Work done, not time \\
+Worker-days & Workers $\times$ Days (constant total, equal efficiency) \\
+\bottomrule
+\end{tabular}
+\end{formulabox}
+
+\section{Key Takeaways}
+\begin{itemize}[leftmargin=1.4em]
+  \item Everything reduces to \textbf{Work = Rate $\times$ Time}, with total work usually normalized
+    to 1.
+  \item Time and rate are always \textbf{reciprocals}; efficiency and time are always
+    \textbf{inversely proportional}.
+  \item For ratio-based questions (``A is twice as efficient as B''), assign \textbf{rates directly}
+    --- don't guess at days.
+  \item Wages split by \textbf{work contributed}, never by time spent.
+  \item The worker-day identity (Workers $\times$ Days = constant) is the backbone of every
+    joining/leaving problem --- see \texttt{02-fast-tricks-and-shortcuts.tex}.
+\end{itemize}
+
+\end{document}

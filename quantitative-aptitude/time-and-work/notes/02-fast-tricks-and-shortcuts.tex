@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\input{../preamble.tex}
+
+\title{\color{primary}\textbf{Time \& Work --- Fast Tricks \& Shortcuts}\\[4pt]\large LCM Method, Worker-Day Tricks, and Every Speed Technique You Need}
+\author{Aptitude Grind}
+\date{}
+
+\lhead{\small Time \& Work --- Fast Tricks \& Shortcuts}
+\rhead{\small Aptitude Grind}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\noindent This file collects the \textbf{fast calculation methods} --- the actual shortcuts you
+execute under exam pressure. For the full catalogue of question \emph{types} that use these tricks,
+see \texttt{03-question-pattern-catalog.tex}.
+
+\section{The LCM Method (Best Trick in the Topic)}
+Instead of taking total work $=1$ and juggling fractions, take total work $=$ \textbf{LCM of all the
+given times}. Every individual's rate then becomes a clean whole number.
+
+\begin{examplebox}[Worked Example]
+Individual times = 10 days, 15 days, 30 days.
+\begin{align*}
+\text{Total work} &= \text{LCM}(10,15,30) = 30 \text{ units} \\
+A\text{'s rate} &= 30/10 = 3 \text{ units/day} \\
+B\text{'s rate} &= 30/15 = 2 \text{ units/day} \\
+C\text{'s rate} &= 30/30 = 1 \text{ unit/day}
+\end{align*}
+No fractions anywhere --- just add rates directly.
+\end{examplebox}
+
+This is the single fastest technique in the whole topic and should be your default approach whenever
+every given time is an integer.
+
+\begin{tipbox}[Why This Beats the Fraction Method]
+Fractions with different denominators need a common denominator anyway before you can add them ---
+the LCM method just does that step \emph{once, up front}, and keeps every number that follows as a
+clean integer.
+\end{tipbox}
+
+\section{Rate-First Thinking for Ratio Questions}
+Whenever a question gives an efficiency or time \textbf{ratio} instead of concrete numbers, assign
+rates immediately instead of trying to imagine days.
+
+\begin{formulabox}[Rule]
+``A is $k$ times as efficient as B'' $\to$ let B's rate $= 1$ unit/day, A's rate $= k$ units/day.
+Never start by guessing how many days each person takes.
+\end{formulabox}
+
+This was introduced in \texttt{01-fundamentals.tex} \S6.1 --- it's repeated here because it is, by a
+wide margin, the highest-leverage mental habit in this topic. It also combines naturally with the LCM
+method: once you have a rate ratio, picking total work = LCM of the \emph{implied} times keeps
+everything as clean integers.
+
+\section{Worker-Day Method --- Workers Leaving}
+Use the conserved quantity $\text{Total Work} = \text{Workers} \times \text{Days}$ (from
+\texttt{01-fundamentals.tex} \S10) directly, rather than switching to fractional one-day's-work.
+
+\begin{formulabox}[Procedure]
+\begin{enumerate}[leftmargin=1.4em]
+  \item Total work (worker-days) $=$ Original Workers $\times$ Original Days
+  \item Work done so far $=$ Workers present $\times$ Days already worked
+  \item Remaining work $=$ Total work $-$ Work done so far
+  \item Days needed $=$ Remaining work $/$ Workers now present
+\end{enumerate}
+\end{formulabox}
+
+\begin{examplebox}[Worked Example]
+24 workers can finish a job in 18 days. After 6 days, 6 workers leave. How many more days to finish?
+\begin{align*}
+\text{Total work} &= 24 \times 18 = 432 \text{ worker-days} \\
+\text{Done in 6 days} &= 24 \times 6 = 144 \text{ worker-days} \\
+\text{Remaining} &= 432 - 144 = 288 \text{ worker-days} \\
+\text{Workers left} &= 24 - 6 = 18 \\
+\text{Days needed} &= 288/18 = 16 \text{ more days}
+\end{align*}
+\end{examplebox}
+
+\section{Worker-Day Method --- Workers Joining Later}
+Exactly the mirror image of \S3: compute the work already completed by the original group, subtract
+it from the total, then divide the remaining work by the \textbf{new}, larger workforce.
+
+\begin{formulabox}[General Procedure]
+\begin{enumerate}[leftmargin=1.4em]
+  \item Compute Total Work as either 1 (fractional method) or worker-days (whole-number method).
+  \item Compute work already done before the new workers joined.
+  \item Solve only for the \textbf{remaining} work with the \textbf{updated} rate.
+\end{enumerate}
+\end{formulabox}
+
+This ``completed work, then remaining work'' split is the master pattern behind almost every
+midway-change question --- joining, leaving, or a mix of both.
+
+\section{Alternate-Day / Cyclic Working --- Compute the Full Cycle First}
+When two (or more) workers alternate days (A on day 1, B on day 2, A on day 3, \ldots),
+\textbf{don't} calculate day-by-day from scratch. Instead:
+
+\begin{formulabox}[Procedure]
+\begin{enumerate}[leftmargin=1.4em]
+  \item Calculate the work done in \textbf{one full cycle} (usually 2 days, or however long the
+    repeating pattern is).
+  \item Divide the total work by the cycle work to find how many \textbf{complete cycles} fit.
+  \item Handle the \textbf{leftover} work with the next partial day(s) separately.
+\end{enumerate}
+\end{formulabox}
+
+\begin{examplebox}[Worked Example]
+A's one-day work $=1/10$, B's one-day work $=1/15$. They alternate, starting with A.
+\[
+\text{2-day cycle work} = \frac{1}{10} + \frac{1}{15} = \frac{3}{30} + \frac{2}{30} = \frac{5}{30} =
+\frac{1}{6}
+\]
+Since $1/6$ of the work finishes every 2 days, the whole job needs $6 \times 2 = 12$ days --- and
+because $1/6 \times 6 = 1$ exactly, there's no partial final day to handle here.
+\end{examplebox}
+
+\begin{warnbox}[Common Mistake]
+Assuming the two workers contribute equally per cycle. They don't --- always use each individual's
+actual one-day rate inside the cycle, and pay attention to \textbf{whose turn is last} if the work
+finishes mid-cycle.
+\end{warnbox}
+
+\section{Efficiency Change $\to$ Time Change (Percentage Method)}
+Efficiency and time are inversely proportional, so a percentage change in efficiency does
+\textbf{not} translate into the same percentage change in time.
+
+\begin{formulabox}[Formulas]
+If efficiency increases by $x\%$:
+\[
+\text{New Time} = \text{Old Time} \times \frac{100}{100+x}
+\]
+If efficiency decreases by $x\%$:
+\[
+\text{New Time} = \text{Old Time} \times \frac{100}{100-x}
+\]
+\end{formulabox}
+
+\begin{examplebox}[Worked Example --- Increase]
+Efficiency $+25\%$, old time $= 20$ days.
+\[
+\text{New Time} = 20 \times \frac{100}{125} = 20 \times \frac{4}{5} = 16 \text{ days}
+\]
+\end{examplebox}
+
+\begin{examplebox}[Worked Example --- Decrease]
+Efficiency $-20\%$, old time $= 15$ days.
+\[
+\text{New Time} = 15 \times \frac{100}{80} = 15 \times \frac{5}{4} = 18.75 \text{ days}
+\]
+\end{examplebox}
+
+\begin{warnbox}[Common Mistake]
+Computing ``efficiency $+25\%$ $\Rightarrow$ time $-25\%$.'' Time drops by \textbf{less} than the
+efficiency gain, because the relationship is a reciprocal, not linear.
+\end{warnbox}
+
+\section{Wages --- Proportional to Work Share}
+Restating \texttt{01-fundamentals.tex} \S11 as an executable procedure:
+\begin{formulabox}[Procedure]
+\begin{enumerate}[leftmargin=1.4em]
+  \item Find each person's individual rate (or use the ratio directly).
+  \item Split the total wage in the same ratio as the rates --- \textbf{not} the time each person
+    spent working.
+\end{enumerate}
+\end{formulabox}
+
+\begin{examplebox}[Worked Example]
+A (10 days) and B (15 days) work together and jointly earn Rs.~1500.
+\begin{align*}
+\text{Rate ratio } A:B &= 1/10 : 1/15 = 3:2 \quad \text{(multiply both by 30)} \\
+A\text{'s share} &= 1500 \times 3/5 = Rs.~900 \\
+B\text{'s share} &= 1500 \times 2/5 = Rs.~600
+\end{align*}
+\end{examplebox}
+
+\section{Pipes and Cisterns --- Handling a Pipe That's Closed Partway}
+A very common TCS-style twist: both pipes open together, but one is closed after some time.
+
+\begin{formulabox}[Procedure]
+\begin{enumerate}[leftmargin=1.4em]
+  \item Compute the net rate while \textbf{both} pipes are open, and find how much work that portion
+    completes.
+  \item Subtract from 1 to get the \textbf{remaining} work.
+  \item Switch to the rate of whichever pipe is \textbf{still running} and solve only for the
+    remainder.
+\end{enumerate}
+\end{formulabox}
+
+\begin{examplebox}[Worked Example]
+Fill pipe A = 10 hr, outlet pipe B = 15 hr. Both open together, but B (the outlet) is closed after 3
+hours. Find the total time to fill the tank.
+\begin{align*}
+\text{Net rate (both open)} &= 1/10 - 1/15 = 1/30 \\
+\text{Work in first 3 hr} &= 3 \times 1/30 = 1/10 \\
+\text{Remaining work} &= 1 - 1/10 = 9/10 \\
+\text{A alone (rate } 1/10\text{) needs:} & (9/10)/(1/10) = 9 \text{ more hours} \\
+\text{Total time} &= 3 + 9 = 12 \text{ hours}
+\end{align*}
+\end{examplebox}
+
+\section{Quick Reference --- Which Trick for Which Situation}
+\begin{formulabox}[Lookup Table]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Situation} & \textbf{Use} \\
+\midrule
+All given times are clean integers & LCM Method (\S1) \\
+A ratio is given instead of numbers & Rate-First Thinking (\S2) \\
+Workers leave partway through & Worker-Day Method (\S3) \\
+Workers join partway through & Worker-Day Method, mirrored (\S4) \\
+Two/more workers alternate days & Cycle-first method (\S5) \\
+Efficiency changes by a percentage & Percentage-to-time formula (\S6) \\
+Payment needs to be split among workers & Wages-by-work-share (\S7) \\
+One pipe is closed/opened partway through & Split into phases (\S8) \\
+\bottomrule
+\end{tabular}
+\end{formulabox}
+
+\end{document}

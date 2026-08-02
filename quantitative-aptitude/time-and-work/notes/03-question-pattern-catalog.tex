@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\input{../preamble.tex}
+
+\title{\color{primary}\textbf{Time \& Work --- Question Pattern Catalog}\\[4pt]\large Every High-Yield Phrasing, Grouped by the Trick That Solves It}
+\author{Aptitude Grind}
+\date{}
+
+\lhead{\small Time \& Work --- Question Pattern Catalog}
+\rhead{\small Aptitude Grind}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\noindent Time \& Work questions look varied, but almost every one of them reduces to a handful of
+tricks from \texttt{02-fast-tricks-and-shortcuts.tex}. This file catalogues the actual
+\textbf{phrasings} you'll meet in TCS NQT (Ninja + Digital) and similar placement tests, grouped by
+category, each with the fastest method and a verified mini-example. Skim this before a test to
+pattern-match a question to its solution method in seconds.
+
+\section*{Category A --- Two (or More) People Working Together}
+
+\subsection*{A1. Direct Combined-Work Question}
+\begin{tipbox}[Phrasing]
+``A can finish a work in 6 days, B in 12 days. In how many days can they finish it together?''
+\end{tipbox}
+\textbf{Method:} $xy/(x+y)$ from \texttt{01-fundamentals.tex} \S3. \\
+\textbf{Answer:} $(6 \times 12)/(6+12) = 4$ \textbf{days}.
+
+\subsection*{A2. Three-or-More-Workers Combined Question}
+\begin{tipbox}[Phrasing]
+``A, B, and C can individually finish a job in 12, 15, and 20 days. Working together, how long will
+they take?''
+\end{tipbox}
+\textbf{Method:} LCM Method (\texttt{02-fast-tricks-and-shortcuts.tex} \S1). LCM(12,15,20) = 60
+$\Rightarrow$ rates 5, 4, 3 units/day $\Rightarrow$ combined rate = 12 units/day $\Rightarrow$
+\textbf{5 days}.
+
+\section*{Category B --- Efficiency Ratio Problems}
+
+\subsection*{B1. ``X Times as Efficient'' Question}
+\begin{tipbox}[Phrasing]
+``A is thrice as efficient as B. B alone can complete a work in 24 days. Find the time taken by A
+alone, and by A and B together.''
+\end{tipbox}
+\textbf{Method:} Rate-First Thinking (\S2). B's rate $=1/24$; A's rate $=3/24=1/8$ $\Rightarrow$ A
+alone $=$ \textbf{8 days}; together $=(8\times24)/(8+24)=6$ \textbf{days}.
+
+\subsection*{B2. Time-Ratio-to-Efficiency-Ratio Conversion}
+\begin{tipbox}[Phrasing]
+``The ratio of the time taken by P and Q to complete a task is 4:7. What is the ratio of their
+efficiencies?''
+\end{tipbox}
+\textbf{Method:} Efficiency and time are always inversely proportional
+(\texttt{01-fundamentals.tex} \S6) $\Rightarrow$ efficiency ratio $=$ \textbf{7:4}.
+
+\section*{Category C --- Worker Joining or Leaving Midway}
+
+\subsection*{C1. Someone Joins Partway Through}
+\begin{tipbox}[Phrasing]
+``A can complete a job alone in 18 days. A works alone for 6 days, then B (who alone takes 9 days)
+joins. How many total days does the job take?''
+\end{tipbox}
+\textbf{Method:} Completed-work-then-remaining-work split
+(\texttt{02-fast-tricks-and-shortcuts.tex} \S4). A's 6-day share $=6/18=1/3$; remaining $=2/3$;
+combined rate $=1/18+1/9=1/6$; extra days needed $=(2/3)/(1/6)=4$. \textbf{Total = 6 + 4 = 10 days.}
+
+\subsection*{C2. Workers Leave Partway Through}
+\begin{tipbox}[Phrasing]
+``24 workers can finish a job in 18 days. After 6 days, 6 workers leave. In how many more days will
+the remaining workers finish the job?''
+\end{tipbox}
+\textbf{Method:} Worker-Day Method (\texttt{02-fast-tricks-and-shortcuts.tex} \S3). Total
+$=24\times18=432$ worker-days; done $=24\times6=144$; remaining $=288$; workers left $=18$
+$\Rightarrow$ \textbf{16 more days.}
+
+\section*{Category D --- Men / Women / Children Equivalence}
+
+\subsection*{D1. Given an Equivalence Ratio, Find a Mixed-Group Time}
+\begin{tipbox}[Phrasing]
+``2 men do the same amount of work as 3 women. 2 men alone can finish a job in 12 days. In how many
+days can 4 men and 6 women together finish the same job?''
+\end{tipbox}
+\textbf{Method:} Convert to a common rate unit first (\texttt{01-fundamentals.tex} \S7). $2\text{
+men}=12$ days $\Rightarrow$ 1 man $=1/24$; since $2\text{ men}=3\text{ women}$ in output, 1 woman
+$=1/36$. Combined rate of $4\text{ men}+6\text{ women} = 4/24+6/36 = 1/6+1/6 = 1/3 \Rightarrow$
+\textbf{3 days.}
+
+\subsection*{D2. Men/Women/Children Together}
+\begin{tipbox}[Phrasing]
+``If 2 men or 4 women or 6 children can complete a job in the same time, how many days will 1 man, 2
+women, and 3 children together take, given 2 men alone take 12 days?''
+\end{tipbox}
+\textbf{Method:} Same conversion approach as D1 --- every category is first expressed in terms of a
+single ``man-unit,'' then rates are added directly.
+
+\section*{Category E --- Pipes and Cisterns}
+
+\subsection*{E1. Fill and Empty Pipe Together}
+\begin{tipbox}[Phrasing]
+``Pipe A can fill a tank in 8 hours; pipe B can empty it in 12 hours. If both are opened together,
+how long will the tank take to fill?''
+\end{tipbox}
+\textbf{Method:} Net rate (\texttt{01-fundamentals.tex} \S9). $1/8-1/12=1/24 \Rightarrow$
+\textbf{24 hours.}
+
+\subsection*{E2. A Pipe Is Closed Partway Through}
+\begin{tipbox}[Phrasing]
+``Fill pipe A takes 10 hours, outlet pipe B takes 15 hours. Both are opened together, but B is
+closed after 3 hours. How long does the tank take to fill in total?''
+\end{tipbox}
+\textbf{Method:} Two-phase split (\texttt{02-fast-tricks-and-shortcuts.tex} \S8). Net rate while
+both open $=1/10-1/15=1/30$; work in 3 hr $=1/10$; remaining $9/10$ filled by A alone at
+$1/10$/hr $=$ 9 more hours $\Rightarrow$ \textbf{Total = 12 hours.}
+
+\subsection*{E3. Multiple Fill Pipes, One Outlet}
+\begin{tipbox}[Phrasing]
+``Three pipes P, Q, R can fill a tank in 12, 15, and 20 minutes respectively, while an outlet pipe S
+can empty it in 10 minutes. If all four are opened together, will the tank ever fill?''
+\end{tipbox}
+\textbf{Method:} Sum every inlet rate, subtract the outlet rate (\texttt{01-fundamentals.tex} \S9).
+If the net rate is zero or negative, the tank \textbf{never fills} --- always check the sign of the
+net rate before computing a time.
+
+\section*{Category F --- Alternate-Day Working}
+
+\subsection*{F1. Two Workers Alternate Days}
+\begin{tipbox}[Phrasing]
+``A can complete a job in 10 days, B in 15 days. Working on alternate days, starting with A, in how
+many days will the job be completed?''
+\end{tipbox}
+\textbf{Method:} Cycle-first method (\texttt{02-fast-tricks-and-shortcuts.tex} \S5). 2-day cycle
+work $=1/10+1/15=1/6$; since $1/6\times6=1$ exactly, the job finishes in exactly \textbf{12 days} (6
+full cycles), with \textbf{no partial final day}.
+
+\subsection*{F2. Alternate Days With a Leftover Fraction}
+\begin{tipbox}[Phrasing]
+``A can complete a job in 4 days, B in 6 days. Working on alternate days starting with A, how many
+full days pass before the job is finished, and who finishes it?''
+\end{tipbox}
+\textbf{Method:} Same cycle-first method, but here the cycle work ($1/4+1/6=5/12$) does
+\textbf{not} divide evenly into 1 --- find how many full cycles fit, then solve the small leftover
+fraction with whichever worker's turn comes next (don't assume it always lands on a clean day).
+
+\section*{Category G --- Wages Based on Work}
+
+\subsection*{G1. Split Payment by Work Contributed}
+\begin{tipbox}[Phrasing]
+``A (10 days alone) and B (15 days alone) work together on a job and are jointly paid Rs.~1500. What is
+each person's share?''
+\end{tipbox}
+\textbf{Method:} Wages-by-work-share (\texttt{02-fast-tricks-and-shortcuts.tex} \S7). Rate ratio
+$A:B=3:2 \Rightarrow$ A gets $1500\times3/5=$ Rs.~900, B gets $1500\times2/5=$ Rs.~600.
+
+\subsection*{G2. Three-Way Wage Split With a Helper}
+\begin{tipbox}[Phrasing]
+``A and B can together do a job in 10 days. With the help of C, they finish it in 6 days. If the
+total payment is Rs.~3000, how much should C receive?''
+\end{tipbox}
+\textbf{Method:} Find C's rate by subtraction (difference-formula logic from
+\texttt{01-fundamentals.tex} \S5, applied to a three-person combined rate instead of two), then split
+wages by rate ratio exactly as in G1.
+
+\section*{Category H --- Machine / Printer / Robot Work}
+
+\subsection*{H1. Direct Machine-Rate Question}
+\begin{tipbox}[Phrasing]
+``Printer A can print 1000 pages in 5 hours, Printer B can print the same 1000 pages in 8 hours. If
+both print together, how long will it take?''
+\end{tipbox}
+\textbf{Method:} Identical to a two-worker combined-work question (\texttt{01-fundamentals.tex} \S8)
+--- a machine's rate is treated exactly like a person's rate. $(5\times8)/(5+8)=40/13$ hours.
+
+\subsection*{H2. Machine Stopped Partway}
+\begin{tipbox}[Phrasing]
+``Machine P can complete a task in 8 hours, machine Q in 10 hours, machine R in 12 hours. All three
+start together, but P is shut off after 2 hours. In approximately how much more time will Q and R
+finish the rest?''
+\end{tipbox}
+\textbf{Method:} Same two-phase split as E2 --- compute work done by all three in the first phase,
+subtract from 1, then solve the remainder using only the machines still running.
+
+\section*{Category I --- Percentage / Fractional Work Completed}
+
+\subsection*{I1. Given a Percentage, Find the Full-Job Time}
+\begin{tipbox}[Phrasing]
+``A can complete 75\% of a work in 15 days. In how many days can A alone complete the entire work? B
+then finishes the remaining 25\% in 4 days --- how many days would B alone take for the full job?''
+\end{tipbox}
+\textbf{Method:} Scale up directly --- if 75\% takes 15 days, 100\% takes $15/0.75=20$ days for A.
+Similarly, B's 25\% in 4 days scales to $4/0.25=16$ days for the full job.
+
+\subsection*{I2. Fractional Work Split Between Two Workers}
+\begin{tipbox}[Phrasing]
+``A can do 40\% of a job in a certain time; B does the remaining 60\%. If A takes 8 days for their
+share, and A and B have the same efficiency, how long does B take for their share?''
+\end{tipbox}
+\textbf{Method:} Convert percentages to a work ratio ($40:60=2:3$), then scale A's time by that
+ratio to find B's time, since equal efficiency means time is proportional to the fraction of work
+assigned.
+
+\section*{Category J --- Variable Efficiency (Speed Changes Mid-Job)}
+
+\subsection*{J1. Efficiency Doubles/Triples Partway}
+\begin{tipbox}[Phrasing]
+``Working at a constant rate, A can finish a job in 10 days. A works at the normal rate for the
+first 4 days, then works at double efficiency for the rest. How many total days does the job take?''
+\end{tipbox}
+\textbf{Method:} Treat this as two separate phases with two different rates, exactly like the
+two-phase pipe/machine split in E2/H2. First 4 days at rate $1/10$ complete $2/5$; remaining $3/5$
+at double rate ($1/5$/day) takes 3 more days $\Rightarrow$ \textbf{Total = 7 days.}
+
+\subsection*{J2. Efficiency Changes by a Given Percentage}
+\begin{tipbox}[Phrasing]
+``A normally takes 20 days for a job. If A's efficiency increases by 25\% starting from day one, how
+many days will A now take?''
+\end{tipbox}
+\textbf{Method:} Percentage-to-time formula (\texttt{02-fast-tricks-and-shortcuts.tex} \S6).
+$\text{New Time} = 20\times100/125=16$ \textbf{days.}
+
+\section*{Priority Order for Limited Prep Time}
+If you're short on time, drill these first --- they cover the large majority of what actually
+appears in TCS-style placement tests, roughly in order of frequency:
+
+\begin{formulabox}[Priority List]
+\begin{enumerate}[leftmargin=1.4em]
+  \item \textbf{A1} --- Two people working together (the base formula everything else builds on)
+  \item \textbf{B1} --- Efficiency ratio (``X times as efficient'')
+  \item \textbf{C1/C2} --- Someone joins or leaves midway
+  \item \textbf{D1} --- Men/Women/Children equivalence
+  \item \textbf{E1/E2} --- Pipes and cisterns, including a pipe closing partway
+  \item \textbf{F1} --- Alternate-day working
+  \item \textbf{G1} --- Wages split by work share
+  \item \textbf{H1} --- Machine/Printer/Robot work (same math as A1, different wrapper)
+  \item \textbf{I1} --- Percentage of work completed
+  \item \textbf{J1/J2} --- Variable efficiency (lower frequency, but appears occasionally in TCS
+    Digital)
+\end{enumerate}
+\end{formulabox}
+
+These ten patterns, combined with the LCM Method and rate-first thinking from
+\texttt{02-fast-tricks-and-shortcuts.tex}, cover almost everything TCS typically asks while avoiding
+the low-return, highly complex worker puzzles seen in exams like CAT or SSC CGL.
+
+\end{document}
