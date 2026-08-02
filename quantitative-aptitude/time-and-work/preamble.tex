@@ -1,0 +1,38 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\definecolor{primary}{RGB}{30,64,140}
+\definecolor{tipbg}{RGB}{235,244,255}
+\definecolor{examplebg}{RGB}{240,248,235}
+\definecolor{formulabg}{RGB}{255,247,224}
+\definecolor{warnbg}{RGB}{255,236,236}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\cfoot{\thepage}
+
+\newtcolorbox{tipbox}[1][Tip]{
+  colback=tipbg, colframe=primary, fonttitle=\bfseries,
+  title=#1, breakable, rounded corners
+}
+\newtcolorbox{examplebox}[1][Example]{
+  colback=examplebg, colframe=primary!70!black, fonttitle=\bfseries,
+  title=#1, breakable, rounded corners
+}
+\newtcolorbox{formulabox}[1][Formula]{
+  colback=formulabg, colframe=primary!70!black, fonttitle=\bfseries,
+  title=#1, breakable, rounded corners
+}
+\newtcolorbox{warnbox}[1][Warning]{
+  colback=warnbg, colframe=red!60!black, fonttitle=\bfseries,
+  title=#1, breakable, rounded corners
+}
